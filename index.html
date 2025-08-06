@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Profile - BIT Student</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 20px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #666;
+        }
+
+        .name {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            font-size: 1em;
+            opacity: 0.8;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .about {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .education-item, .experience-item, .project-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .item-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .item-subtitle {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .item-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .item-description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .name {
+                font-size: 2em;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .edit-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            color: #856404;
+        }
+
+        .edit-note h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .edit-note ul {
+            margin-left: 20px;
+        }
+
+        .edit-note li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Edit Instructions -->
+        <div class="edit-note">
+            <h3>📝 How to Edit This Profile:</h3>
+            <ul>
+                <li><strong>Personal Info:</strong> Update name, title, location, and profile image</li>
+                <li><strong>About:</strong> Customize your personal description and career objectives</li>
+                <li><strong>Skills:</strong> Add/remove technical skills relevant to your BIT studies</li>
+                <li><strong>Education:</strong> Update your university, degree, and academic achievements</li>
+                <li><strong>Experience:</strong> Add internships, part-time jobs, or relevant projects</li>
+                <li><strong>Projects:</strong> Showcase your academic and personal projects</li>
+                <li><strong>Contact:</strong> Update your contact information and social media links</li>
+            </ul>
+        </div>
+
+        <div class="profile-card">
+            <!-- Header Section -->
+            <div class="header">
+                <div class="profile-image">👤</div>
+                <h1 class="name">Your Name</h1>
+                <p class="title">Final Year BIT Student</p>
+                <p class="location">📍 Your City, Country</p>
+            </div>
+
+            <!-- Content Section -->
+            <div class="content">
+                <!-- About Section -->
+                <div class="section">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="about">
+                        I am a passionate final year Bachelor of Information Technology (BIT) student with a strong foundation in software development, database management, and web technologies. I am enthusiastic about leveraging technology to solve real-world problems and eager to contribute to innovative projects. My academic journey has equipped me with both theoretical knowledge and practical skills in programming, system analysis, and project management.
+                    </p>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="skills">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Agile</span>
+                        <span class="skill-tag">Database Design</span>
+                        <span class="skill-tag">System Analysis</span>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+                    <div class="education-item">
+                        <h3 class="item-title">Bachelor of Information Technology</h3>
+                        <p class="item-subtitle">Your University Name</p>
+                        <p class="item-date">2021 - 2024 (Expected)</p>
+                        <p class="item-description">
+                            Currently pursuing final year with focus on software development, database systems, and web technologies. 
+                            Maintaining strong academic performance with relevant coursework in programming, system analysis, and project management.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience Section -->
+                <div class="section">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="experience-item">
+                        <h3 class="item-title">Student Developer</h3>
+                        <p class="item-subtitle">University Projects / Freelance</p>
+                        <p class="item-date">2022 - Present</p>
+                        <p class="item-description">
+                            Developed various web applications and software solutions as part of academic projects and personal initiatives. 
+                            Collaborated with peers on team projects, gaining experience in version control and agile development methodologies.
+                        </p>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <h3 class="item-title">IT Support Intern</h3>
+                        <p class="item-subtitle">Company Name (if applicable)</p>
+                        <p class="item-date">Summer 2023</p>
+                        <p class="item-description">
+                            Provided technical support and assisted in system maintenance tasks. 
+                            Gained hands-on experience with troubleshooting and customer service skills.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="section">
+                    <h2 class="section-title">Projects</h2>
+                    <div class="project-item">
+                        <h3 class="item-title">E-Commerce Website</h3>
+                        <p class="item-subtitle">Full-Stack Web Development</p>
+                        <p class="item-date">2023</p>
+                        <p class="item-description">
+                            Developed a complete e-commerce platform using React.js, Node.js, and MongoDB. 
+                            Implemented user authentication, product management, and payment integration.
+                        </p>
+                    </div>
+                    
+                    <div class="project-item">
+                        <h3 class="item-title">Student Management System</h3>
+                        <p class="item-subtitle">Database Design & Development</p>
+                        <p class="item-date">2023</p>
+                        <p class="item-description">
+                            Created a comprehensive student management system using Java and MySQL. 
+                            Features include student registration, grade management, and report generation.
+                        </p>
+                    </div>
+                    
+                    <div class="project-item">
+                        <h3 class="item-title">Mobile App Development</h3>
+                        <p class="item-subtitle">Cross-Platform Development</p>
+                        <p class="item-date">2022</p>
+                        <p class="item-description">
+                            Built a task management mobile application using React Native. 
+                            Implemented local storage, push notifications, and intuitive user interface.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="section">
+                    <h2 class="section-title">Contact Information</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <span>your.email@example.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <span>Your City, Country</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🎓</div>
+                            <span>Your University</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">💼</a>
+                        <a href="#" class="social-link">🐙</a>
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">🐦</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
